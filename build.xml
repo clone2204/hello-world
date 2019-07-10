@@ -1,0 +1,8 @@
+<project name="Test Project.">
+   <description>
+      Test for travis build tool.
+   </description>
+   <target name="compile" description="compile the source">
+      <javac Test.java>
+   </target>
+</project>
