@@ -9,7 +9,7 @@ public class Test
       System.out.println("Biggest Brain Add: " + a + " + " + b + " = " + BigBrainAdd(a, b));
    }
 
-   public int BigBrainAdd(int a, int b)
+   public static int BigBrainAdd(int a, int b)
    {
       int result = a;
       
