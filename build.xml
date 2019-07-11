@@ -1,8 +1,11 @@
 <project name="Test Project.">
-   <description>
-      Test for travis build tool.
-   </description>
+   <property name = "src.dir" value = "src"/>
+   <property name = "build.dir" value = "build"/>
+   
    <target name="compile" description="compile the source">
-      <javac Test.java>
+      <mkdir dir = "${build.dir}"/>
+      <javac destdir = "${build.dir}">
+         <src path = "${src.dir}"/>
+      </javac>
    </target>
 </project>
