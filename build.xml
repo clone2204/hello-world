@@ -12,4 +12,13 @@
    <target name="test" description="Compile and run tests.">
       <echo message="Sup."/>
    </target>
+
+   <target name="clean" description="Delete current build data.">
+      <delete>
+         <fileset dir = "${build.dir}">
+            <include name = "**/*.class"/>
+         </fileset>
+      </delete>
+   </target>
+
 </project>
