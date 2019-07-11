@@ -8,4 +8,8 @@
          <src path = "${src.dir}"/>
       </javac>
    </target>
+
+   <target name="test" description="Compile and run tests.">
+      <echo message="Sup."/>
+   </target>
 </project>
