@@ -1,16 +1,33 @@
 <project name="Test Project.">
+   <property name = "lib.dir" value = "lib"/>
    <property name = "src.dir" value = "src"/>
    <property name = "build.dir" value = "build"/>
+   <property name = "test.src.dir" value = "tests"/>
+   <property name = "test.build.dir" value = "${test.src.dir}/build"/>
+
+   <path id='classpath'>
+      <fileset dir="${lib.dir}" includes="**/*.jar" />
+   </path>
    
    <target name="compile" description="compile the source">
       <mkdir dir = "${build.dir}"/>
-      <javac destdir = "${build.dir}">
+      <javac destdir = "${build.dir}" includeantruntime = "true">
          <src path = "${src.dir}"/>
       </javac>
    </target>
 
    <target name="test" description="Compile and run tests.">
-      <echo message="Sup."/>
+      <antcall target = "compile"/>
+      <mkdir dir = "${test.build.dir}"/>
+ 
+      <javac destdir = "${test.build.dir}" includes = "junit-platform-console-standalone-1.2.0.jar" includeantruntime = "true">
+         <src path = "${test.src.dir}"/>
+         <classpath refid="junit.path"/>
+      </javac>
+      
+      <junit haltonfailure="true" printsummary = "true">
+         <test name = "${test.build.dir}/Test1"/>
+      </junit>
    </target>
 
    <target name="clean" description="Delete current build data.">
