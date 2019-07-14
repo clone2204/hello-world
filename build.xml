@@ -19,8 +19,8 @@
    <target name="test" depends = "compile" description="Compile and run tests.">
       <mkdir dir = "${test.build.dir}"/>
       
-      <classpath location="lib/ant-junit.jar"/>
       <junit haltonfailure="true" printsummary = "true">
+         <classpath location="lib/ant-junit.jar"/>
          <test name = "${test.build.dir}/Test1"/>
       </junit>
    </target>
