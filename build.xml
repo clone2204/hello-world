@@ -16,10 +16,9 @@
       </javac>
    </target>
 
-   <target name="test" description="Compile and run tests.">
-      <antcall target = "compile"/>
+   <target name="test" depends = "compile" description="Compile and run tests.">
       <mkdir dir = "${test.build.dir}"/>
- 
+      
       <javac destdir = "${test.build.dir}" includes = "junit-platform-console-standalone-1.2.0.jar" includeantruntime = "true">
          <src path = "${test.src.dir}"/>
          <classpath refid="junit.path"/>
