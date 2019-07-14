@@ -24,7 +24,7 @@
          <classpath refid="junit.path"/>
       </javac>
       
-      <junit haltonfailure="true" printsummary = "true" class= "lib/ant-junit.jar">
+      <junit haltonfailure="true" printsummary = "true" classname= "lib/ant-junit.jar">
          <test name = "${test.build.dir}/Test1"/>
       </junit>
    </target>
