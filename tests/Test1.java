@@ -5,6 +5,8 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import src.Test
+
 public class Test1 
 {
    @Test
